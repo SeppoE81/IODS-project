@@ -12,14 +12,19 @@ date()
 
 This is a course on Open data, Open science and Data science. As a note to self and anyone reading the goals of the course are as follows: 
 
-/ understand possibilities of open science, open data, and open research tools
-/ master state-of-the-art, open and free software tools: RStudio and GitHub
-/ write dynamic reports (text, code, graphs, tables, etc.) in R Markdown
-/ apply the principle of reproducible research and see its practical advantages
-/ visualize and analyze data sets with some fairly advanced statistical methods
-/ learn much more of all this in the future (continuous learning)
+understand possibilities of open science, open data, and open research tools
 
-Test line
+master state-of-the-art, open and free software tools: RStudio and GitHub
+
+write dynamic reports (text, code, graphs, tables, etc.) in R Markdown
+
+apply the principle of reproducible research and see its practical advantages
+
+visualize and analyze data sets with some fairly advanced statistical methods
+
+learn much more of all this in the future (continuous learning)
+
+test line
 
 My repository is at:
 https://seppoe81.github.io/IODS-project/
