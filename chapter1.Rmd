@@ -24,8 +24,6 @@ visualize and analyze data sets with some fairly advanced statistical methods
 
 learn much more of all this in the future (continuous learning)
 
-test line
-
 My repository is at:
-https://seppoe81.github.io/IODS-project/
+https://github.com/SeppoE81/IODS-project
 
