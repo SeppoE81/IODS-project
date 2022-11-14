@@ -1,17 +1,15 @@
 # Seppo Eskola 13.11.2022
 # Week 2 exercises
+# Part 1: Data wrangling
 
 library(tidyverse)
 
 
 
-# Task 2 (Data wrangling)
+## Task 2 
 
-# Read the given .txt file into R and save it as "Excercesi2_set"
+# Read the given .txt file into R and save it as "lrn14"
 lrn14 <- read.table("http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS3-data.txt", sep="\t", header=TRUE)
-
-# Old try
-# Excercise2_set <-read.table("https://www.mv.helsinki.fi/home/kvehkala/JYTmooc/JYTOPKYS3-data.txt", header=TRUE, sep = "\t")
 
 # Examining the dimensions and structure of the data frame
 dim(lrn14)
@@ -21,7 +19,7 @@ str(lrn14)
 
 
 
-# Task 3 (Data wrangling)
+## Task 3
 
 # Scale the Attitude column by creating column "attitude"
 lrn14$attitude <- lrn14$Attitude / 10
@@ -89,7 +87,9 @@ learning2014 <- filter(learning2014, points > 0)
 # see the structure of the new dataset
 str(learning2014)
 
-# Task 4 (Data wrangling)
+
+
+## Task 4
 
 # write a csv file of the new data
 
@@ -103,43 +103,15 @@ read.csv("data/learning2014v1.csv")
 
 learning2014_wrangled <- read.table("data/learning2014v1.csv", sep=",", header=TRUE)
 
+# Confirm structure of wrangled data
+str(learning2014_wrangled)
+# Result "166 obs. of  7 variables" as it should
+
+# Check the beginning of the data
+head(learning2014_wrangled)
+# appears correct (correct headers and first data rows)
+
 # End of wrangling
 
 
-
-
-# ANALYSIS
-
-
-
-# Read previously wrangled data into an R object
-
-learning2014_wrangled <- read.table("data/learning2014v1.csv", sep=",", header=TRUE)
-
-# Examining the dimensions and structure of the data frame
-dim(learning2014_wrangled)
-str(learning2014_wrangled)
-
-# Result: the data has 7 columns and 166 rows. The columns are gender, age, attitude, 
-# deep, stra, surf and points. The data is in the form of int or num or, in the case of gender, chr. 
-# The data is is from a questioner for students with more information on th equestions here:
-# "https://www.mv.helsinki.fi/home/kvehkala/JYTmooc/JYTOPKYS3-meta.txt"
-
-# Visualising the data
-
-# Access the gglot2 library
-library(ggplot2)
-
-# access the GGally library
-library(GGally)
-
-Summary_plots <- ggpairs(learning2014_wrangled, mapping = aes(), lower = list(combo = wrap("facethist", bins = 20)))
-
-# print Summary_plots
-Summary_plots
-
-# The resulting plots show an overview of the data. For instance, the first column gives two diagrams, 
-# one for each sex (M and F), on each of the six other variables. Correlations between variables are also 
-# available in numeric form, e.g., the highest correlatio is between attitude and points (Corr: 0.437) and 
-# these variables are therefore more strongly linked than any of the others.
 
