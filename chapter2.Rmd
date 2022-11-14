@@ -9,34 +9,54 @@ date()
 
 *ANALYSIS and code*
 
-- The intent here is to analyse a pre-wrangled set of data and provide both the analyses and code used step by step.
+- The intent here is to analyse a pre-wrangled set of data and provide both the analyses and the code used step by step. So here we go:
 
 - Read previously wrangled data into an R object
 
+```{r}
 learning2014_wrangled <- read.table("data/learning2014v1.csv", sep=",", header=TRUE)
+
+```
+
+
+
 
 - Examining the dimensions and structure of the data frame
 
+```{r}
 dim(learning2014_wrangled)
 str(learning2014_wrangled)
+
+```
+
 
 - Result: the data has 7 columns and 166 rows. The columns are gender, age, attitude, deep, stra, surf and points. The data is in the form of 'int' or 'num' or, in the case of gender, 'chr'. The data is is from a questioner for students where students have answered questions on a scale 1-5 (1 most negative, 5 most positive). More information on the questions here: "https://www.mv.helsinki.fi/home/kvehkala/JYTmooc/JYTOPKYS3-meta.txt"
 
 Visualising the data
 
-- Access the gglot2 library
+- Access the ggplot2 library
+- Access the GGally library
+```{r}
 library(ggplot2)
-
- - Access the GGally library
 library(GGally)
+
+```
 
 - Create a plot matrix of the data
 
-Summary_plots <- ggpairs(learning2014_wrangled, mapping = aes(), lower = list(combo = wrap("facethist", bins = 20)))
+```{r}
+Summary_plots <- ggpairs(learning2014_wrangled, mapping = aes(col = gender), lower = list(combo = wrap("facethist", bins = 20)))
+
+```
+
+
 
 - print Summary_plots
 
+```{r}
 Summary_plots
+
+```
 
 - The resulting plots show an overview of the data. For instance, the first column gives two diagrams, one for each sex (M and F), on each of the six other variables. Correlations between variables are also available in numeric form, e.g., the highest correlatio is between attitude and points (Corr: 0.437) and these variables are therefore more strongly linked than any of the others.
 
